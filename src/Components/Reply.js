@@ -1,7 +1,7 @@
-import "./Comment.scss";
+import "./Reply.scss";
 import { useState, useRef } from "react";
 
-const Comment = ({ content, createdAt, score, user }) => {
+const Reply = ({ content, createdAt, score, user, replyingTo }) => {
   const [currScore, setcurrScore] = useState(score);
   const isIncClicked = useRef(false);
   const isDecClicked = useRef(false);
@@ -23,8 +23,8 @@ const Comment = ({ content, createdAt, score, user }) => {
   };
 
   return (
-    <div className="comment">
-      <div className="comment__score">
+    <div className="Reply">
+      <div className="Reply__score">
         <img
           src="/images/icon-plus.svg"
           alt="plus"
@@ -39,22 +39,25 @@ const Comment = ({ content, createdAt, score, user }) => {
           className={isDecClicked.current ? "clicked" : ""}
         />
       </div>
-      <div className="comment__text-content">
-        <div className="comment__top">
-          <div className="comment__user-and-time">
+      <div className="Reply__text-content">
+        <div className="Reply__top">
+          <div className="Reply__user-and-time">
             <img src={user.image.png} alt="user" />
-            <h1 className="comment__userName">{user.username}</h1>
-            <span className="comment__time">{createdAt}</span>
+            <h1 className="Reply__userName">{user.username}</h1>
+            <span className="Reply__time">{createdAt}</span>
           </div>
-          <div className="comment__reply">
+          <div className="Reply__reply">
             <img src="/images/icon-reply.svg" alt="reply" />
             Reply
           </div>
         </div>
-        <div className="comment__content">{content}</div>
+        <div className="Reply__content">
+          <span>@{replyingTo} </span>
+          {content}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Comment;
+export default Reply;

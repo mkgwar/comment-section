@@ -6,9 +6,10 @@
   align-items: center;
 }
 
-.comment {
+.Reply {
   @include flex;
-  width: 100%;
+  width: 90%;
+  margin-left: auto;
   padding: 2rem;
   gap: 2rem;
   margin-bottom: 2rem;
@@ -78,5 +79,10 @@
   &__content {
     font-size: 1.25rem;
     line-height: 2.25rem;
+
+    span {
+      color: $Dark-blue;
+      font-weight: 500;
+    }
   }
 }
