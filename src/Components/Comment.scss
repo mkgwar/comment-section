@@ -1,0 +1,74 @@
+@import "../colors";
+
+@mixin flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.comment {
+  @include flex;
+  width: 50%;
+  margin: auto;
+  padding: 2rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+
+  &__score {
+    flex: 0 0 4rem;
+    color: $Moderate-blue;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    @include flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    background-color: $Very-light-gray;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+  }
+
+  &__text-content {
+    width: 100%;
+  }
+
+  &__top {
+    width: 100%;
+    @include flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__user-and-time {
+    @include flex;
+    gap: 1rem;
+
+    img {
+      width: 2rem;
+    }
+  }
+
+  &__userName {
+    font-size: 1rem;
+  }
+
+  &__time {
+    color: $Dark-blue;
+  }
+
+  &__reply {
+    @include flex;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: $Moderate-blue;
+  }
+
+  &__content {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
