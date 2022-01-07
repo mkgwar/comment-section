@@ -18,7 +18,7 @@ const ReplyBox = ({ user, postReply }) => {
 
   const submitReply = (event) => {
     event.preventDefault();
-    postReply({ ...data, user: user, content: reply });
+    postReply({ ...data, replyingTo: user, content: reply });
     setreply("");
   };
 
