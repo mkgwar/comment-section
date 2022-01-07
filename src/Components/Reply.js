@@ -42,8 +42,8 @@ const Reply = ({ content, createdAt, score, user, replyingTo }) => {
       <div className="Reply__text-content">
         <div className="Reply__top">
           <div className="Reply__user-and-time">
-            <img src={user.image.png} alt="user" />
-            <h1 className="Reply__userName">{user.username}</h1>
+            <img src="/images/1971.jpg" alt="user" />
+            <h1 className="Reply__userName">{user}</h1>
             <span className="Reply__time">{createdAt}</span>
           </div>
           <div className="Reply__reply">
